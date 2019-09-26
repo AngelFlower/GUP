@@ -1,26 +1,82 @@
 package com.angelflower.java;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
 
 
-public class Main {
+public class Main extends JFrame {
+    public static String SSID, MAC;
+
+    public Main() {
+        this.setTitle("GUP");
+        this.setSize(400,300);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        this.setLayout(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JLabel textTitle = new JLabel("GUP - Get Ubee Password");
+        textTitle.setBounds(10,5,300,20);
+        add(textTitle);
+
+        JLabel textSSID = new JLabel("SSID:");
+        textSSID.setBounds(80,60,70,20);
+        add(textSSID);
+
+        JLabel textMAC = new JLabel("MAC address:");
+        textMAC.setBounds(80,95,100,20);
+        add(textMAC);
+
+        JTextField txtSSID = new JTextField();
+        txtSSID.setBounds(180,60,130,25);
+        add(txtSSID);
+
+        JTextField txtMAC = new JTextField();
+        txtMAC.setBounds(180,95,130,25);
+        add(txtMAC);
+
+        JTextField txtPass = new JTextField();
+        txtPass.setBounds(130,170,130,25);
+        txtPass.setEditable(false);
+        add(txtPass);
+
+        JButton btnGetPass = new JButton("Get Password");
+        btnGetPass.setBounds(60,130,270,25);
+        add(btnGetPass);
+        btnGetPass.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SSID = txtSSID.getText();
+                MAC = txtMAC.getText();
+
+                //SSID = input.nextLine();
+                char[] ArraySSID = SSID.toCharArray();
+                char[] ArraySSIDFiltered = getCharsSSID(ArraySSID);
+
+                //System.out.print("Enter MAC: ");
+                //MAC = input.nextLine();
+                char[] ArrayMac = MAC.toCharArray();
+                char[] ArrayMacFiltered = FilterMAC(ArrayMac);
+
+                txtPass.setText(getPassword(ArrayMacFiltered, ArraySSIDFiltered));
+                System.out.println("Password: "+getPassword(ArrayMacFiltered, ArraySSIDFiltered));
+            }
+        });
+
+        this.setVisible(true);
+
+    }
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String SSID, MAC;
-        System.out.print("Enter SSID: ");
-        SSID = input.nextLine();
-        char[] ArraySSID = SSID.toCharArray();
-        char[] ArraySSIDFiltered = getCharsSSID(ArraySSID);
+        Main window = new Main();
 
-        System.out.print("Enter MAC: ");
-        MAC = input.nextLine();
-        char[] ArrayMac = MAC.toCharArray();
-        char[] ArrayMacFiltered = FilterMAC(ArrayMac);
 
-        System.out.println("Password: "+getPassword(ArrayMacFiltered, ArraySSIDFiltered));
+        //Scanner input = new Scanner(System.in);
+
+        //System.out.print("Enter SSID: ");
+
     }
 
     public static char[] FilterMAC(char[] ArrayMac){
@@ -46,15 +102,15 @@ public class Main {
     }
 
     public static String getPassword(char[] MACFiltered, char[] SSIDFiltered){
-        int index = 0;
         char[] Pass = new char[10];
         for (int i = 0; i < 6 ; i++) {
-            Pass[index] = MACFiltered[i];
-            index++;
+            Pass[i] = MACFiltered[i];
         }
         for (int i = 6; i < 10 ; i++) {
             Pass[i] = SSIDFiltered[i-6];
         }
         return String.copyValueOf(Pass);
     }
+
+
 }
