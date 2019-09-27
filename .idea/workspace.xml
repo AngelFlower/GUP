@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="387cbb01-484e-4359-8bdf-63db76571164" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/angelflower/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/angelflower/java/Main.java" afterDir="false" />
     </list>
@@ -21,6 +20,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/angelflower/resources" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AFC-X\Documents\Proyectos\GUP\src\com\angelflower\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AFC-X\Documents\Proyectos\GUP\src\com\angelflower" />
+      <recent name="C:\Users\AFC-X\Documents\Proyectos\GUP\src\com\angelflower\java" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -62,7 +75,8 @@
       <option name="presentableId" value="Default" />
       <updated>1569451934035</updated>
       <workItem from="1569451955177" duration="79000" />
-      <workItem from="1569452596835" duration="11176000" />
+      <workItem from="1569452596835" duration="11777000" />
+      <workItem from="1569604856326" duration="5790000" />
     </task>
     <servers />
   </component>
@@ -74,7 +88,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
