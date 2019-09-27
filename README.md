@@ -1,4 +1,12 @@
-#GUP
+# GUP
 
-##Get Ubee Passwords (WLAN)
-![Screenshot](screenshots/1.png)
+##### Get Ubee Wi-Fi Passwords 
+##Interface
+
+- Main screen
+
+![Screenshot](screenshots/main.PNG)
+
+- Password screen
+
+![Screenshot](screenshots/pass.PNG)
